@@ -1,0 +1,843 @@
+// 
+// VARIABLES 
+//
+@main-color:        #8E44AD;    // page important color
+@main-color-2:      #516395;
+
+@background:        #fff;        // section background color
+@background-2:      #F3F4EF;
+@dark_title_txt:    #000;
+@light_title_txt:   #fff;
+@dark-bg:           #192138;
+
+
+/*
+|----------------------------------------------------------------------------
+| MIXINS
+|----------------------------------------------------------------------------
+*/
+.color_trans(@main-color-2, @main-color, @rotate: 57deg, @alpha: 0.95) {
+    background: -webkit-linear-gradient(
+        @rotate, 
+        rgba(red(@main-color-2), green(@main-color-2), blue(@main-color-2), @alpha) 0%, 
+        rgba(red(@main-color), green(@main-color), blue(@main-color), @alpha) 100%
+    );
+    background: -moz-linear-gradient(
+        @rotate, 
+        rgba(red(@main-color-2), green(@main-color-2), blue(@main-color-2), @alpha) 0%, 
+        rgba(red(@main-color), green(@main-color), blue(@main-color), @alpha) 100%
+    );
+    background: -ms-linear-gradient(
+        @rotate, 
+        rgba(red(@main-color-2), green(@main-color-2), blue(@main-color-2), @alpha) 0%, 
+        rgba(red(@main-color), green(@main-color), blue(@main-color), @alpha) 100%
+    );
+    background: -o-linear-gradient(
+        @rotate, 
+        rgba(red(@main-color-2), green(@main-color-2), blue(@main-color-2), @alpha) 0%, 
+        rgba(red(@main-color), green(@main-color), blue(@main-color), @alpha) 100%
+    );
+    background: linear-gradient(
+        @rotate, 
+        rgba(red(@main-color-2), green(@main-color-2), blue(@main-color-2), @alpha) 0%, 
+        rgba(red(@main-color), green(@main-color), blue(@main-color), @alpha) 100%
+    );
+}
+
+
+// Less Function
+// INPUT FORM PLACEHOLDER COLOR   
+.placeholder-color( @value ) {
+    &::-webkit-input-placeholder {
+        color: @value !important;
+    }
+    &:-moz-placeholder {
+        color: @value !important;
+    }
+    &::-moz-placeholder {
+        color: @value !important;
+    }
+    &:-ms-input-placeholder {
+        color: @value !important;
+    }
+}
+
+/**
+ * ===============================
+ *  Defult CSS 
+ * ===============================
+ */
+ body{
+    color: fade(@dark_title_txt, 40%);
+}
+p{
+    color: fade(@dark_title_txt, 50%);
+}
+.overlay-color {
+    .color_trans(@main-color-2, @main-color);
+}
+
+
+
+/**
+ * ===============================
+ *  Section Heading Section Defult Style 
+ * ===============================
+ */
+.section-heading,
+.section-heading-2 {
+    color: fade(@dark_title_txt, 50%);
+}
+.section-heading-2 {
+    .fa {
+        color: fade(@dark_title_txt, 7%);
+    }
+}
+.section-header {
+    .section-heading-normal {
+        color: fade(@dark_title_txt, 40%);
+    }
+
+    p {
+        color: fade(@dark_title_txt, 40%);
+    }
+}
+
+
+
+/**
+ * ===============================
+ *   Defult Button Style
+ * ===============================
+ */
+.btn {
+
+    &.btn-fill {
+        background-color: @main-color;
+        border-color: @main-color;
+
+        &:hover {
+            background-color: darken(@main-color, 15%) !important;
+            border-color: darken(@main-color, 15%) !important;
+        }
+    }
+
+    &.btn-border {
+        border-color: @main-color;
+
+        &:hover {
+            background-color: @main-color;
+        }
+    }
+}
+
+
+.btn-text-link {
+    a {
+        color: @main-color;
+
+        &:hover {
+            color: darken(@main-color, 15%) !important;
+        }
+    }
+}
+
+
+
+/**
+ * =============================
+ * Form Defult Style
+ * =============================
+ */
+.single-form {
+    .input-group {
+        .btn {
+            background-color: @light_title_txt;
+            color: @main-color;
+
+            &:hover {
+                background-color: @light_title_txt !important;
+            }
+        }
+    }
+}
+
+.outer-border {
+    &.single-form {
+        .input-group {
+            .btn {
+                background-color: @main-color;
+            }
+        }
+    }
+}
+
+
+/**
+ * ================================
+ * Navbar Style 
+ * ================================
+ */
+.header-nav { 
+
+    li {
+        .btn {
+            border-color: @dark-bg !important;
+            background-color: @dark-bg !important;
+            color: @background;
+
+            &:hover {
+                border-color: @dark-bg !important;
+                background-color: @dark-bg !important;
+                color: @main-color !important;
+            }
+        }
+
+    }
+
+    /* After Fixed In Top */
+    &.navbar-home { 
+        .nav {
+            li {
+                .btn {
+                    border-color: @dark-bg !important;
+                    background-color: @dark-bg !important;
+                    color: @background;
+
+                    &:hover {
+                        border-color: @dark-bg !important;
+                        background-color: @dark-bg !important;
+                        color: @main-color !important;
+                    }
+                }
+            }
+        }
+    }  
+}
+
+
+
+/**
+ * ================================
+ * Header Contant Style
+ * ================================
+ */
+
+
+/*  Header Contant Style  */
+/*  ====================  */
+.header-body {
+    .header-contant-left {
+        .single-form {
+            .input-group {
+                .form-control {
+                    .placeholder-color(fade(@main-color, 70%));
+                    color: @main-color;
+
+                    &:hover {
+                        color: @main-color !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/**
+ * =========================
+ * Sponsors Section
+ * =========================
+ */
+.sponsors {
+    background-color: @background-2;
+}
+
+
+
+/**
+ * ==========================
+ * Features Defult Style
+ * ==========================
+ */
+
+
+/* Features Defult Style */
+.features {
+    .each-item {
+        .fa {
+            color: @main-color;
+        }
+    }
+}
+.features-hover {
+    .each-item {
+        &:hover {
+            .fa {
+                background-color: @main-color;
+            }
+        }
+    }
+
+}
+
+
+
+/**
+ * =============================
+ * EASY FEATURES AVAILABLE 
+ * =============================
+ */
+.easy-features-available {
+    background: @background;
+
+    .read-more {
+        color: fade(@dark_title_txt, 50%);
+        border-color: fade(@dark_title_txt, 15%);
+
+        &:hover {
+            background-color: @dark-bg !important;
+            border-color: @dark-bg !important;
+            color: #fff !important;
+
+            .fa {
+                color: #fff !important;
+            }
+        }
+    }
+}
+
+
+
+/**
+ * ==============================
+ * Get Our App Section
+ * ==============================
+ */
+.get-our-app-bg {
+    background-color: @background;
+}
+
+.get-our-app {
+    .single-form {
+        .btn {
+            background-color: @main-color;
+        }
+    }
+}
+
+
+
+
+/**
+ * ========================================
+ * description Info Inner
+ * ========================================
+ */
+
+.description-info-inner {
+    ul {
+        li {
+            color: fade(@dark_title_txt, 40%);
+
+            &:after {
+                background-color: @main-color;
+            }
+            &:before {
+                border-color: @main-color;
+            }
+        }
+    }
+}
+
+
+
+/**
+ * ==============================
+ * Ultimate Features
+ * ==============================
+ */
+.ultimate-features {
+    .ultimate-fretures-description {
+        ul {
+            li {
+                color: fade(@dark_title_txt, 55%);
+
+                .fa {
+                    color: @main-color;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/** 
+ * ======================
+ * Fun Facts
+ * ======================
+ */
+.fun-facts {
+    background-color: @background-2;
+}
+
+
+
+/**
+ * ======================
+ * Pricing Table Section 
+ * ======================
+ */
+.pricing-table {
+    background-color: @background-2;
+}
+
+.table-single {
+    border-color: fade(@dark_title_txt, 8%);
+
+    .important {
+        background-color: @main-color;
+
+        &:after {
+            border-top: 38px solid @main-color;
+        }
+    }
+
+    .meta-price {
+        color: @dark_title_txt;
+
+        .rate {
+
+            &:after {
+                border-color: fade(@dark_title_txt, 8%);
+            }
+        }
+    }
+    .button {
+        .btn {
+            border-color: fade(@dark_title_txt, 8%);
+            color: @dark_title_txt;
+        }
+    }
+
+    &:hover {
+        .meta-price {
+            .rate {
+                background-color: @main-color;
+            }
+        }
+
+        .button {
+            .btn {
+                border-color: @main-color;
+                background-color: @main-color;
+            }
+        }
+    }
+}
+
+
+
+/**
+ * ====================================
+ * Newsletter Form Style
+ * ====================================
+ */
+.subscribe-newsletter {
+    .color_trans(@main-color-2, @main-color);
+
+    .input-group {
+        .form-control,
+        .btn {
+            &:hover {
+                color: @main-color;
+            }
+        }
+
+        .btn {
+            &:hover {
+                background-color: @dark-bg !important;
+            }
+        }
+    }
+
+    .section-heading-2 {
+        color: @light_title_txt !important;
+
+        .fa {
+            color: fade(@light_title_txt, 20%);
+        }
+    }
+
+    .single-form{
+        .form-control {
+            color: @light_title_txt;
+            border-color: fade(@light_title_txt, 80%);
+            .placeholder-color(fade(@light_title_txt, 90%));
+
+            &:hover {
+                color: @light_title_txt !important;
+            }
+        }
+    }
+}
+
+
+
+
+/**
+ * ===============================
+ * Subscription and contact  "MESSAGE"
+ * ===============================
+ */
+.subscription-success, 
+.subscription-failed {
+    color: fade(@dark_title_txt, 80%) !important;
+}
+
+
+
+
+/**
+ * ======================
+ * Team Section
+ * ======================
+ */
+.team {
+    background-color: @background;
+
+    .team-contant {
+        .each-member {
+            .member-detail {
+                .name {
+                    color: fade(@dark_title_txt, 80%);
+                }
+                .detail {
+                    color: fade(@dark_title_txt, 70%);
+                }
+            }
+        }
+    }
+}
+
+
+
+/**
+ * =========================================
+ * Image Gallery Section
+ * =========================================
+ */
+
+ .image-gallery {
+    background-color: @background;
+
+    #slider {
+        .owl-page {
+            span {
+                border: 1px solid @main-color !important;
+            }
+            &.active {
+                span {
+                    background-color: @main-color !important;
+                }
+            }
+        }
+    }
+ }
+
+
+/**
+ * =========================================
+ * Download Section
+ * =========================================
+ */
+.download {
+    background-color: @background;
+
+    .button-group {
+        .btn {
+            background-color: @main-color;
+        }
+    }
+}
+
+
+
+
+/**
+ * ===========================
+ * Footer Section 
+ * ===========================
+ */
+.footer {
+    .color_trans(@main-color-2, @main-color, 17deg);
+
+    .copyright {
+        p {
+            color: fade(@light_title_txt, 70%);
+
+            a {
+                color: @dark-bg;
+
+                &:hover {
+                    color: @dark-bg !important;
+                }
+            }
+        }
+    }
+}
+
+.social-icon {
+    ul {
+        li {
+            a {
+                background-color: @background;
+                color: @main-color;
+            }
+        }
+    }
+}
+
+
+
+/**
+ * ================================
+ * Some Features Section
+ * ================================
+ */
+.some-feature-background {
+    background-color: @background;
+}
+
+.some-feature {
+    .section-header {
+        .section-heading {
+            color: fade(@light_title_txt, 90%);
+        }
+
+        p {
+            color: fade(@light_title_txt, 70%);
+        }
+    }
+
+    .features {
+        .detail {
+            h4 {
+                color: @main-color;
+            }
+
+            p {
+                color: fade(@light_title_txt, 70%);
+            }
+        }
+    }
+}
+
+
+
+/**
+ * =============================
+ * Client's Feedback Section
+ * =============================
+ */
+.client-feedback {
+    background-color: @background-2;
+}
+
+.client-feedback-contant{
+    .each-item {
+        figure{
+            border-color: fade(@dark_title_txt, 8%);
+            background-color: @background;
+        }
+
+        .quote-sym {
+            .fa {
+                color: fade(@dark_title_txt, 15%);
+            }
+        }
+
+        blockquote {
+            color: fade(@dark_title_txt, 40%);
+        }
+
+        .rating {
+            li {
+                .fa {
+                    color: @main-color;
+                }
+            }
+        }
+            
+        figcaption {
+            img {
+                border-color: fade(@dark_title_txt, 8%);
+            }
+            .name {
+                color:  fade(@dark_title_txt, 50%)
+            }
+            cite {
+                color: @main-color;
+            }
+        }
+    }
+}
+
+
+
+/**
+ * =========================
+ * Free Trial Section
+ * =========================
+ */
+ .free-trial-bg {
+    background-color: @background;
+ }
+
+.free-trial {
+
+    .section-header {
+        .section-heading {
+            color: fade(@light_title_txt, 90%);
+        }
+
+        p {
+            color: fade(@light_title_txt, 70%);
+        }
+    }
+}
+
+
+
+/**
+ * =========================
+ * Contact Us
+ * =========================
+ */
+.contact-us {
+    .color_trans(@main-color-2, @main-color, 27deg);
+
+    .contact-us-body {
+
+        h3 {
+            color: #fff;
+            font-size: 22;
+        }
+
+        .btn {
+            color: #fff;
+
+            &.btn-fill {
+                background-color: @dark-bg;
+
+                &:hover {
+                    background-color: @dark-bg !important;
+                    color: @main-color;
+                }
+            }
+
+            &.btn-border {
+                border-color: @background;
+
+                &:hover {
+                    background-color: @dark-bg !important;
+                    border-color: @dark-bg !important;
+                }
+            }
+        }
+    }
+}
+
+
+
+/**
+ * =========================================
+ * Collapse CSS
+ * =========================================
+ */
+
+.collapse-area {
+    background-color: @background;
+
+    .collapse-body-contant {
+        .collapse-panel-title {
+            color: fade(@dark_title_txt, 60%)
+        }
+    }
+}
+
+
+
+
+/**
+ * ===================================
+ * Sign In OR Sign Up Form Style
+ * ===================================
+ */
+.modal {
+    .color_trans(@main-color-2, @main-color);
+
+    .single-form {
+        .input-group {
+            margin-bottom: 35px;
+
+            .form-control {
+                border-bottom-color: fade(@dark_title_txt, 10%);
+            }
+        }
+
+        .checkbox {
+            .forgot-pass {
+                color: @main-color;
+            }
+        }
+    }
+
+}
+
+/* .squared */
+.squared {
+    label {
+        border-color: fade(@dark_title_txt, 30%);
+
+        &:after {
+            border-color: fade(@light_title_txt, 90%);
+        }
+    }
+
+    input[type=checkbox] {
+        &:checked {
+            + label {
+                border-color: @main-color;
+                background-color: @main-color;
+            }
+        }
+    }
+}
+/* end .squared */
+
+
+
+
+@import "../../../bootstrap/less/variables.less"; 
+
+@media (max-width: @screen-xs-max) {
+    /**
+     * ================================
+     * Navbar Style 
+     * ================================
+     */
+    .header-nav {
+        .navbar-collapse {
+            &.in {
+                border-top-color: fade(@main-color, 90%);
+            }
+        }
+    }
+
+
+}
+
+
